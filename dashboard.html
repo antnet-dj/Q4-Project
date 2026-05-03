@@ -58,7 +58,22 @@ body {
     transition: 0.3s;
     color: #fff6fb; 
     text-shadow: 0 0 6px rgba(255,255,255,0.4);
-    animation: bgSlide 20s infinite;
+}
+
+.card1 {
+    background-image: url('https://i.pinimg.com/originals/71/38/83/71388308fd900a1668a3981cb0ef698b.gif');
+}
+
+.card2 {
+    background-image: url('https://i.pinimg.com/originals/82/4d/b1/824db152cde0fe8c3654c209a126882c.gif');
+}
+
+.card3 {
+    background-image: url('https://i.pinimg.com/originals/18/d1/25/18d1252d4360f8c156718551f53168bd.gif');
+}
+
+.card4 {
+    background-image: url('https://i.pinimg.com/originals/cb/b6/65/cbb66590f8bb0916151dfc29359e5d3e.gif');
 }
 
 .card:hover {
@@ -68,7 +83,7 @@ body {
 .quote-box {
     background: rgba(255, 240, 250, 0.7);
     border-left: 5px solid #ff9ad5;
-    animation: bgSlide 20s infinite;
+    animation: bgSlide 10s infinite;
 }
 
 .footer {
@@ -113,16 +128,16 @@ body {
     <div class="row g-4">
 
         <div class="col-md-4">
-            <div class="card p-4 text-center">
+            <div class="card card1 p-4 text-center">
                 <h3>👩‍🎓 Student Profile</h3>
                 <p>Name: Your Name</p>
-                <p>Grade & Section: Grade 10 - Section</p>
+                <p>Grade & Section: Grade 9 - Sapphire</p>
                 <p>Status: Ready to Learn ✨</p>
             </div>
         </div>
 
         <div class="col-md-4">
-            <div class="card p-4 text-center">
+            <div class="card card2 p-4 text-center">
                 <h3>📚 Study Progress</h3>
                 <p>Tasks Completed: <span id="tasksDone"></span></p>
                 <p>Subjects: 8</p>
@@ -134,14 +149,14 @@ body {
         </div>
 
         <div class="col-md-4">
-            <div class="card p-4 text-center">
+            <div class="card card3 p-4 text-center">
                 <h3>⏰ Live Clock</h3>
                 <p id="clock"></p>
             </div>
         </div>
 
         <div class="col-12">
-            <div class="card quote-box p-4 text-center">
+            <div class="card card4 quote-box p-4 text-center">
                 <h4>🌸 Inspiring Quote of the Day</h4>
                 <p id="quote"></p>
             </div>
