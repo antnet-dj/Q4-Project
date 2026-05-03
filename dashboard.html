@@ -56,7 +56,7 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     transition: 0.3s;
-    color: #fff6fb; 
+    color: #390823; 
     text-shadow: 0 0 6px rgba(255,255,255,0.4);
 }
 
@@ -91,6 +91,18 @@ body {
     background: rgba(255, 240, 250, 0.7);
     border-left: 5px solid #ff9ad5;
     background-image: url('https://i.pinimg.com/originals/cb/b6/65/cbb66590f8bb0916151dfc29359e5d3e.gif');
+}
+
+.pink-bg {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff9abd, #ffd1e3, #ffd1ed);
+    color: #2f3e55;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(255, 150, 210, 0.5);
+    margin-bottom: 10px;
 }
 
 .footer {
@@ -130,7 +142,7 @@ body {
 
         <div class="col-md-4">
             <div class="card card1 p-4 text-center">
-                <h3>👩‍🎓 Student Profile</h3>
+                <h3 class="pink-bg">👩‍🎓 Student Profile</h3>
                 <p>Name: Your Name</p>
                 <p>Grade & Section: Grade 9 - Sapphire</p>
                 <p>Status: Ready to Learn ✨</p>
@@ -139,7 +151,7 @@ body {
 
         <div class="col-md-4">
             <div class="card card2 p-4 text-center">
-                <h3>📚 Study Progress</h3>
+                <h3 class="pink-bg">📚 Study Progress</h3>
                 <p>Tasks Completed: <span id="tasksDone"></span></p>
                 <p>Subjects: 8</p>
                 <script>
@@ -151,14 +163,14 @@ body {
 
         <div class="col-md-4">
             <div class="card card3 p-4 text-center">
-                <h3>⏰ Live Clock</h3>
+                <h3 class="pink-bg">⏰ Live Clock</h3>
                 <p id="clock"></p>
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="card quote-box p-4 text-center">
-                <h4>🌸 Inspiring Quote of the Day</h4>
+                <h4 class="pink-bg">🌸 Inspiring Quote of the Day</h4>
                 <p id="quote"></p>
             </div>
         </div>
@@ -170,7 +182,7 @@ body {
 
         <div class="col-md-4">
     <div class="card card5 p-4">
-        <h3>❓ Question Of The Day</h3>
+        <h3 class="pink-bg">❓ Question Of The Day</h3>
         <p><i>Have you eaten breakfast today?</i></p>
     </div>
 </div>
