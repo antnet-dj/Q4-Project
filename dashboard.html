@@ -7,10 +7,11 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 <style>
+
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(135deg, #ffe3ef, #d7ecff, #fff6d6);
+    background: linear-gradient(135deg, #ffe3ef, #ecd7ff, #fff6d6);
     min-height: 100vh;
     color: #2f3e55;
 }
@@ -133,6 +134,53 @@ body {
     transition: all 0.3s ease;
 }
 
+.light-box {
+    margin: 20px auto;
+    padding: 25px;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.25); /* soft white tint */
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 
+        0 10px 30px rgba(255, 150, 200, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow:
+            0 0 10px rgba(251, 119, 198, 0.233),
+            0 0 20px rgba(255, 120, 201, 0.412);
+    }
+
+    50% {
+        box-shadow:
+            0 0 18px rgba(255, 150, 209, 0.261),
+            0 0 35px rgba(255, 150, 209, 0.413);
+    }
+
+    100% {
+        box-shadow:
+            0 0 10px rgba(255, 120, 201, 0.333),
+            0 0 20px rgba(255, 120, 201, 0.385);
+    }
+}
+
+.light-box-inner {
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 18px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 8px 20px rgba(255, 150, 200, 0.12);
+    transition: 0.3s ease;
+}
+
 .footer {
     margin-top: 40px;
     padding: 15px;
@@ -165,20 +213,25 @@ body {
     <h1 class="gradient" id="greeting">Welcome, Student! 🌸</h1>
     <p>Your peaceful study space for learning, goals, and creativity.</p>
 </div>
+
+<div class="light-box">
 <div class="container my-4">
     <div class="row g-4">
 
         <div class="col-md-4">
             <div class="card card1 p-4 text-center">
+                <div class="light-box-inner">
                 <h3 class="pink-bg">👩‍🎓 Student Profile</h3>
                 <p>Name: Your Name</p>
                 <p>Grade & Section: Grade 9 - Sapphire</p>
                 <p>Status: Ready to Learn ✨</p>
+                </div>
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="card card2 p-4 text-center">
+                <div class="light-box-inner">
                 <h3 class="pink-bg">📚 Study Progress</h3>
                 <p>Tasks Completed: <span id="tasksDone"></span></p>
                 <p>Subjects: 8</p>
@@ -186,20 +239,25 @@ body {
                     let completed = 12;
                     document.getElementById("tasksDone").innerHTML = completed;
                 </script>
+                </div>
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="card card3 p-4 text-center">
+                <div class="light-box-inner">
                 <h3 class="pink-bg">⏰ Live Clock</h3>
                 <p id="clock"></p>
+                </div>
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="card quote-box p-4 text-center">
+                <div class="light-box-inner">
                 <h4 class="pink-bg">🌸 Inspiring Quote of the Day</h4>
                 <p id="quote"></p>
+                </div>
             </div>
         </div>
         
@@ -209,14 +267,19 @@ body {
         </div>
 
         <div class="col-md-4">
-    <div class="card card5 p-4">
-        <h3 class="pink-bg">❓ Question Of The Day</h3>
-        <p><i>Have you eaten breakfast today?</i></p>
-    </div>
+            <div class="card card5 p-4">
+                <div class="light-box-inner">
+                <h3 class="pink-bg">❓ Question Of The Day</h3>
+                <p><i>Have you eaten breakfast today?</i></p>
+            </div>
+            </div>
+        </div>
 </div>
 
     </div>
 </div>
+
+<br>
 
 <div class="footer">
     <p>Created by: Aeris Bandong, Antoinette De Jesus, Heart Imam, & Lynnie Tano | 9 SAPPHIRE</p>
