@@ -7,7 +7,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 <style>
-    
 body {
     font-family: 'Quicksand', sans-serif;
     background-image: url('https://i.pinimg.com/originals/56/92/43/5692438f5fda7dab1afb39c8f9cae2ec.gif');
@@ -39,10 +38,9 @@ body::before {
     font-weight: 600;
     backdrop-filter: blur(10px);
     border-radius: 14px;
-    box-shadow: 0 8px 18px rgba(255, 144, 181, 0.62);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
     letter-spacing: 1px;
     animation: bgSlide 20s infinite;
-    text-shadow: 0 2px 10px rgba(213, 56, 87, 0.6);
 }
 
 .grid {
@@ -55,7 +53,6 @@ body::before {
 }
 
 .notebook {
-    color:#2f3e55;
     height: 170px;
     border-radius: 14px; 
     display: flex;
@@ -63,6 +60,7 @@ body::before {
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    color: black;
     font-weight: 600;
     font-size: 1.15rem;
     box-shadow: 0 8px 18px rgba(0,0,0,0.12);
@@ -73,7 +71,7 @@ body::before {
 
 .notebook:hover {
     transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 0 12px rgba(255, 150, 213, 0.7);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.18);
 }
 
 .notebook::after {
@@ -91,6 +89,8 @@ body::before {
 .peh { background: linear-gradient(135deg, #ffc2d1, #ffe3ea); }
 .ict { background: linear-gradient(135deg, #b7d7ff, #d9ecff); }
 .music { background: linear-gradient(135deg, #ffd9b3, #ffe9cc); }
+.filipino { background: linear-gradient(135deg, #7cce6b, #d8ffd0); }
+.lt { background: linear-gradient(135deg, #5e17eb, #8c52ff); }
 
 .sub {
     font-size: 0.75rem;
@@ -136,6 +136,14 @@ body::before {
     transform: translateX(4px);
 }
 
+.page {
+    margin-left: 250px;
+}
+
+.grid {
+    color: black;
+}
+
 .logout {
     margin-top: auto;
     background: rgba(255, 170, 190, 0.35);
@@ -165,6 +173,7 @@ body::before {
     <a href="#" class="side-link logout">🚪 Logout</a>
 </div>
 
+<div class="page">
 <div class="header">
     <div class="title">📒 My Notebooks</div>
 </div>
@@ -209,6 +218,16 @@ body::before {
     <a href="#" class="notebook music">
         Music & Arts
         <div class="sub">creativity & expression</div>
+    </a>
+
+    <a href="#" class="notebook filipino">
+        Filipino
+        <div class="sub">our native language</div>
+    </a>
+
+    <a href="#" class="notebook lt">
+        LT
+        <div class="sub">laws & drills</div>
     </a>
 
 </div>
