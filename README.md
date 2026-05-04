@@ -1,2 +1,2 @@
-username: rainbowdash
-password: applejack
+USERNAME: rainbowdash
+PASSWORD: applejack
