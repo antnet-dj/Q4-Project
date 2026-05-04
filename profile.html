@@ -74,6 +74,43 @@ body {
     }
 }
 
+.btn-primary {
+    background: linear-gradient(135deg, #ffbfd0, #ffd1ea);
+    border: none;
+    font-weight: bold;
+    color: #5a2e3f;
+    box-shadow: 0 0 10px rgba(255, 170, 220, 0.6);
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    font-weight: bold;
+    color: #5a2e3f;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 106, 0.4),
+                0 0 30px rgba(255, 120, 174, 0.2);
+}
+
+.gradient {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff9abd, #ffd1e3, #ffd1ed);
+    color: #744259;
+    padding: 14px 28px;
+    border-radius: 18px;
+    font-size: 2rem;
+    font-weight: 800;
+    box-shadow: 0 6px 18px rgba(255, 150, 210, 0.5);
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+h1.gradient {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 20px auto;
+}
+
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -84,6 +121,36 @@ h1 {
     padding: 15px;
     margin-top: 20px;
 }
+
+.form-control {
+    border-radius: 30px;
+    background: rgba(255, 180, 211, 0.658);
+    border: 1px solid rgba(255, 120, 181, 0.3);
+    color: #744259;
+    padding: 10px 15px;
+}
+
+.form-control:focus {
+    background: rgba(255, 180, 211, 0.658) !important;
+    color: #744259 !important;
+    border: 1px solid rgba(255, 120, 212, 0.5);
+    box-shadow: 0 0 8px rgba(255, 0, 183, 0.5);
+}
+
+.form-control::placeholder {
+    color: #744259;
+    font-weight: bold
+}
+
+.form-control:hover {
+    box-shadow: 0 0 10px rgba(255, 120, 181, 0.5);
+    transition: 0.3s;
+}
+        
+label {
+    font-weight: bold
+}
+
 </style>
 </head>
 <body>
@@ -100,7 +167,7 @@ h1 {
 </nav>
 
 <div class="profile-box">
-    <h1>👤 My Profile</h1>
+    <h1 class="gradient">👤 My Profile</h1>
 
     <label>Name:</label>
     <input type="text" id="name" class="form-control mb-3" placeholder="Enter your name">
@@ -111,7 +178,9 @@ h1 {
     <label>Favorite Subject:</label>
     <input type="text" id="subject" class="form-control mb-3" placeholder="Enter favorite subject">
 
-    <button class="btn btn-light w-100" onclick="saveProfile()">Save Profile 🌸</button>
+    <button class="btn btn-primary w-100 mt-3" onclick="saveProfile()">
+        Save Profile 🌸
+    </button>
 </div>
 
 <div class="footer">
