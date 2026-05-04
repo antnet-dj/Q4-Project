@@ -14,18 +14,33 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
-    color: #fff6fb;
+    color: #2f3e55;
 }
 
 .navbar {
-    background: rgba(255,255,255,0.4);
+    background: rgba(255, 226, 241, 0.427);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.navbar-brand, .nav-link {
-    color: #ff9ad5 !important;
+.navbar-brand {
+    font-weight: bold;
+    color: #ff7eb6 !important;
+}
+
+.nav-link {
+    color: #2f3e55 !important;
     font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+
+.nav-link:hover {
+    color: #ff7eb6 !important;
+    background: rgba(255,255,255,0.6);
+    box-shadow: 0 0 8px rgba(255, 141, 177, 0.5);
+    transform: translateY(-2px);
 }
 
 .profile-box {
@@ -33,9 +48,30 @@ body {
     margin: 50px auto;
     padding: 30px;
     border-radius: 20px;
-    background: rgba(255,255,255,0.35);
+    background: rgba(255, 226, 241, 0.427);
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow:
+            0 0 10px rgba(251, 119, 198, 0.233),
+            0 0 20px rgba(255, 120, 201, 0.412);
+    }
+
+    50% {
+        box-shadow:
+            0 0 18px rgba(255, 150, 209, 0.261),
+            0 0 35px rgba(255, 150, 209, 0.413);
+    }
+
+    100% {
+        box-shadow:
+            0 0 10px rgba(255, 120, 201, 0.333),
+            0 0 20px rgba(255, 120, 201, 0.385);
+    }
 }
 
 h1 {

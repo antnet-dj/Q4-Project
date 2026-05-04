@@ -13,28 +13,64 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #fff6fb;
+    color: #2f3e55;
 }
 
 .navbar {
-    background: rgba(255,255,255,0.4);
+    background: rgba(255, 226, 241, 0.427);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.navbar-brand, .nav-link {
-    color: #ff9ad5 !important;
+.navbar-brand {
+    font-weight: bold;
+    color: #ff7eb6 !important;
+}
+
+.nav-link {
+    color: #2f3e55 !important;
     font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+
+.nav-link:hover {
+    color: #ff7eb6 !important;
+    background: rgba(255,255,255,0.6);
+    box-shadow: 0 0 8px rgba(255, 141, 177, 0.5);
+    transform: translateY(-2px);
 }
 
 .container-box {
     max-width: 700px;
     margin: 50px auto;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 226, 241, 0.427);
     padding: 30px;
     border-radius: 20px;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow:
+            0 0 10px rgba(251, 119, 198, 0.233),
+            0 0 20px rgba(255, 120, 201, 0.412);
+    }
+
+    50% {
+        box-shadow:
+            0 0 18px rgba(255, 150, 209, 0.261),
+            0 0 35px rgba(255, 150, 209, 0.413);
+    }
+
+    100% {
+        box-shadow:
+            0 0 10px rgba(255, 120, 201, 0.333),
+            0 0 20px rgba(255, 120, 201, 0.385);
+    }
 }
 
 h1 {
@@ -43,10 +79,62 @@ h1 {
 }
 
 .task-item {
-    background: rgba(255,255,255,0.25);
+    background: rgba(253, 232, 243, 0.662);
     padding: 12px;
     border-radius: 12px;
     margin-top: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ffbfd0, #ffd1ea);
+    border: none;
+    color: #5a2e3f;
+    box-shadow: 0 0 10px rgba(255, 170, 220, 0.6);
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    color: #5a2e3f;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 106, 0.4),
+                        0 0 30px rgba(255, 120, 174, 0.2)
+}
+
+.gradient {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff9abd, #ffd1e3, #ffd1ed);
+    color: #744259;
+    padding: 14px 28px;
+    border-radius: 18px;
+    font-size: 2rem;
+    font-weight: 800;
+    box-shadow: 0 6px 18px rgba(255, 150, 210, 0.5);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+h1.gradient {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 20px auto;
+}
+
+kbd {
+    background: linear-gradient(135deg, #ffd1ea, #ffe4f2, #ffd9ec);
+    color: #744259;
+    border-radius: 14px;
+    padding: 8px 14px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow:
+        0 0 10px rgba(255, 150, 210, 0.35),
+        0 0 20px rgba(255, 180, 220, 0.25);
+    border: 1px solid rgba(253, 160, 179, 0.4);
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
 }
 
 .footer {
@@ -72,11 +160,15 @@ h1 {
 </nav>
 
 <div class="container-box">
-    <h1>📝 My Tasks</h1>
+    <h1 class="gradient">📝 My Tasks</h1>
+    <br>
     <input type="text" id="taskInput" class="form-control" placeholder="Enter a new task...">
-    <button class="btn btn-light w-100 mt-3" onclick="addTask()">Add Task 🌸</button>
+    <button class="btn btn-primary w-100 mt-3" onclick="addTask()">Add Task 🌸</button>
     <div id="taskList"></div>
-    <p class="mt-4 text-center">Total Tasks: <span id="taskCount">0</span></p>
+    <br>
+    <p class="mt-4 text-center">
+        <kbd>Total Tasks: <span id="taskCount">0</span></kbd>
+    </p>
 </div>
 
 <div class="footer">

@@ -26,6 +26,11 @@ body::before {
     z-index: -1;
 }
 
+.main-content {
+    margin-left: 200px;
+    padding: 20px;
+}
+
 .header {
     text-align: center;
     margin-top: 35px;
@@ -37,12 +42,23 @@ body::before {
     padding: 12px 26px;
     font-size: 28px;
     font-weight: 600;
-    backdrop-filter: blur(10px);
     border-radius: 14px;
-    box-shadow: 0 8px 18px rgba(255, 144, 181, 0.62);
     letter-spacing: 1px;
-    animation: bgSlide 20s infinite;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(255, 144, 181, 0.62);
     text-shadow: 0 2px 10px rgba(213, 56, 87, 0.6);
+}
+
+.title::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    animation: bgSlide 20s infinite;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+    z-index: -1;
 }
 
 .grid {
@@ -83,14 +99,53 @@ body::before {
     background: linear-gradient(135deg, rgba(255,255,255,0.25), transparent 60%);
 }
 
-.math { background: linear-gradient(135deg, #ffb3d1, #ffd6ea); }
-.english { background: linear-gradient(135deg, #b9d9ff, #e1f0ff); }
-.ss { background: linear-gradient(135deg, #ffe6a6, #fff3cc); }
-.science { background: linear-gradient(135deg, #b8f7d3, #d9fff0); }
-.tle { background: linear-gradient(135deg, #d7c2ff, #eee3ff); }
-.peh { background: linear-gradient(135deg, #ffc2d1, #ffe3ea); }
-.ict { background: linear-gradient(135deg, #b7d7ff, #d9ecff); }
-.music { background: linear-gradient(135deg, #ffd9b3, #ffe9cc); }
+.light-box {
+    margin: 20px auto;
+    padding: 25px;
+    max-width: 1100px;
+    background: rgba(255, 206, 231, 0.427);
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 
+        0 10px 30px rgba(255, 150, 200, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow:
+            0 0 10px rgba(251, 119, 198, 0.233),
+            0 0 20px rgba(255, 120, 201, 0.412);
+    }
+
+    50% {
+        box-shadow:
+            0 0 18px rgba(255, 150, 209, 0.261),
+            0 0 35px rgba(255, 150, 209, 0.413);
+    }
+
+    100% {
+        box-shadow:
+            0 0 10px rgba(255, 120, 201, 0.333),
+            0 0 20px rgba(255, 120, 201, 0.385);
+    }
+}
+
+
+
+.math { background: linear-gradient(135deg, #b3b4ff, #d6eaff); }
+.english { background: linear-gradient(135deg, #ffb9b9, #ffe1f5); }
+.ss { background: linear-gradient(135deg, #ddca7b, #eee4c2); }
+.science { background: linear-gradient(135deg, #cff7b8, #d9ffe5); }
+.tle { background: linear-gradient(135deg, #ffc2ee, #fae3ff); }
+.peh { background: linear-gradient(135deg, #fffdc2, #ffffe3); }
+.ict { background: linear-gradient(135deg, #dcb7ff, #f2d9ff); }
+.music { background: linear-gradient(135deg, #b3fff0, #ccfff4); }
+.loplt { background: linear-gradient(135deg, #e3e3e3, #c7c7c7); }
+.ve { background: linear-gradient(135deg, #b3d3ff, #ccfffc); }
 
 .sub {
     font-size: 0.75rem;
@@ -113,11 +168,20 @@ body::before {
 }
 
 .sidebar-title {
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 800;
+    font-size: 1.6rem;
     text-align: center;
-    margin-bottom: 25px;
-    color: #2f3e55;
+    margin-bottom: 28px;
+    color: #744259;
+    letter-spacing: 1px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    box-shadow:
+        0 6px 15px rgba(255, 150, 200, 0.25);
+    text-shadow:
+        0 2px 8px rgba(255, 120, 160, 0.35);
 }
 
 .side-link {
@@ -134,6 +198,7 @@ body::before {
 .side-link:hover {
     background: rgba(255,255,255,0.6);
     transform: translateX(4px);
+    box-shadow: 0 0 8px rgba(255, 141, 177, 0.5);
 }
 
 .logout {
@@ -165,10 +230,12 @@ body::before {
     <a href="#" class="side-link logout">🚪 Logout</a>
 </div>
 
+<div class="main-content">
 <div class="header">
     <div class="title">📒 My Notebooks</div>
 </div>
 
+<div class="light-box">
 <div class="grid">
 
     <a href="#" class="notebook math">
@@ -211,6 +278,17 @@ body::before {
         <div class="sub">creativity & expression</div>
     </a>
 
+    <a href="#" class="notebook loplt">
+        LOP/LT
+        <div class="sub">discipline & leadership</div>
+    </a>
+
+    <a href="#" class="notebook ve">
+        VE
+        <div class="sub">philosophy & values</div>
+    </a>
+
+</div>
 </div>
 
 </body>
