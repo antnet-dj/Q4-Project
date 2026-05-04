@@ -98,10 +98,18 @@ h1, p {
 }
 
 .sprite {
-    width: 150px;
+    width: 220px; 
     position: absolute;
     bottom: 20px;
     right: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sprite:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px hotpink);
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.8);
 }
 </style>
 </head>
@@ -139,7 +147,13 @@ function reveal() {
 }
 </script>
 
-<img src="https://www.pngall.com/wp-content/uploads/15/Emu-Otori-PNG-Free-Image.png" alt="Sprite" class="sprite">
+<img src="https://www.pngall.com/wp-content/uploads/15/Emu-Otori-PNG-Free-Image.png" alt="Sprite" class="sprite" onclick="wondehoy()">
+
+<script>
+function wondehoy() {
+    alert("WONDEYHOY!!!");
+}
+</script>
 
 </body>
 </html>
