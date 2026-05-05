@@ -44,20 +44,43 @@ h1, p {
 }
 
 .form-control {
-    border-radius: 12px;
-    border: none;
+    border-radius: 30px;
+    background: rgba(255, 240, 246, 0.658);
+    border: 1px solid rgba(255, 120, 181, 0.3);
+    color: #744259;
+    padding: 10px 15px;
+}
+
+.form-control:focus {
+    background: rgba(255, 240, 246, 0.658) !important;
+    color: #744259 !important;
+    border: 1px solid rgba(255, 120, 212, 0.5);
+    box-shadow: 0 0 8px rgba(255, 0, 183, 0.5);
+}
+
+.form-control::placeholder {
+    color: #744259;
+}
+
+.form-control:hover {
+    box-shadow: 0 0 10px rgba(255, 120, 181, 0.5);
+    transition: 0.3s;
 }
 
 .btn-primary {
+    font-weight: bold;
     background: linear-gradient(135deg, #ff9ad5, #ffd1ff);
     border: none;
-    color: white;
+    color: #744259;
     box-shadow: 0 0 10px rgba(255, 170, 220, 0.6);
-    transition: transform 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
+    color: #744259;
     transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 140, 0.4),
+                0 0 30px rgba(255, 120, 208, 0.2)
 }
 
 .forgot-btn {
@@ -133,7 +156,7 @@ h1, p {
 <body>
 <div class="login-box">
     <h1 class="typing">Login</h1>
-    <p>Enter username and password</p>
+    <p>Enter the correct username and password</p>
 
     <form onsubmit="login(); return false;">
         <input type="text" id="username" class="form-control mb-3" placeholder="Username">
@@ -150,10 +173,10 @@ function login() {
     let pass = document.getElementById("password").value;
 
     if(user === "rainbowdash" && pass === "applejack") {
-        alert("Login Successful!");
+        alert("⭐Login Successful!");
         window.location.href = "notebooks.html";
     } else {
-        alert("Wrong username or password!");
+        alert("❌Wrong username or password!");
     }
 }
 
@@ -168,7 +191,7 @@ function reveal() {
 
 <script>
 function wondehoy() {
-    alert("WONDEYHOY!!!");
+    alert("⭐WONDEYHOY!!!");
 }
 </script>
 
