@@ -156,27 +156,37 @@ h1, p {
 }
 
 #instructions {
-            background: rgba(120, 206, 255, 0.15);
-            padding: 12px;
-            border-radius: 10px;
-            font-size: 13px;
-            border: 1px solid rgba(120, 194, 255, 0.4);
-            color: #183371;
-        }
+    background: rgba(255, 120, 161, 0.15);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    border: 1px solid rgba(255, 120, 194, 0.4);
+    color:#744259;
+}
 
-        .btn-light {
-            background-color: #97b3ff;
-            border: none;
-            color: #00125a;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
 
-        .btn-light:hover {
-            color: #946f2f;
-            background-color: #fff3c4;
-            box-shadow: 0 0 12px rgba(0, 123, 255, 0.7);
-        }
+.instruction-btn {
+    text-align: center;
+}
+
+.arrow {
+    list-style: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #744259;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    user-select: none;
+    
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+details[open] .arrow {
+    transform: rotate(90deg);
+}
         
 .sprite {
     width: 220px; 
@@ -215,8 +225,8 @@ h1, p {
 <div class="login-box">
     <h1 class="typing">Login</h1>
 
-    <details class="mb-3" ontoggle="showInstructions()">
-        <summary class="btn btn-light btn-sm">Show Instructions</summary>
+    <details class="instruction-btn mb-3" ontoggle="showInstructions()">
+        <summary class="arrow">▸</summary>
         <p id="instructions" style="margin-top:10px;"></p>
     </details>
 
