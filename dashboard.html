@@ -11,9 +11,31 @@
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(135deg, #ffe3ef, #ecd7ff, #fff6d6);
+    background: linear-gradient(
+        45deg, 
+        #ffcfdf 0%,         
+        #ffdbcb 25%, 
+        #ffefba 50%, 
+        #fff9e3 75%, 
+        #ffc1cc 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease-in-out infinite;
     min-height: 100vh;
     color: #2f3e55;
+    background-attachment: fixed;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .navbar {
@@ -142,39 +164,37 @@ body {
     transform: scale(1.03);
     transition: all 0.3s ease;
 }
-
-.light-box {
-    margin: 20px auto;
-    padding: 25px;
+.gradient:active {
+    transform: scale(0.98);
+    box-shadow:
+        0 0 5px rgba(255, 120, 180, 0.6),
+        0 0 15px rgba(255, 150, 200, 0.4);
+}
+  .light-box {
+    margin: 30px auto;
+    padding: 40px;
     max-width: 1200px;
-    background: rgba(255, 206, 231, 0.427);
-    border-radius: 25px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.35); 
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);  
+    border-radius: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
     box-shadow: 
-        0 10px 30px rgba(255, 150, 200, 0.15),
-        0 0 0 1px rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    0 20px 40px rgba(255, 182, 213, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);   
     animation: glowPulse 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
 }
 
 @keyframes glowPulse {
-    0% {
-        box-shadow:
-            0 0 10px rgba(251, 119, 198, 0.233),
-            0 0 20px rgba(255, 120, 201, 0.412);
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow: 0 20px 40px rgba(255, 182, 213, 0.2);
     }
-
     50% {
-        box-shadow:
-            0 0 18px rgba(255, 150, 209, 0.261),
-            0 0 35px rgba(255, 150, 209, 0.413);
-    }
-
-    100% {
-        box-shadow:
-            0 0 10px rgba(255, 120, 201, 0.333),
-            0 0 20px rgba(255, 120, 201, 0.385);
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(255, 150, 200, 0.35);
     }
 }
 
@@ -188,6 +208,29 @@ body {
     box-shadow:
         0 8px 20px rgba(255, 150, 200, 0.12);
     transition: 0.3s ease;
+}
+
+.light-box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.1), 
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shimmer 8s infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
 }
 
 #clock {
@@ -245,6 +288,38 @@ body {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+.footer {
+    margin: 40px auto 20px;
+    padding: 25px;
+    max-width: 1100px; /* Matches your light-box width */
+    text-align: center;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(255, 150, 200, 0.2);
+    transition: all 0.4s ease;
+}
+
+.footer:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 12px 40px rgba(255, 150, 200, 0.4);
+}
+
+.footer p {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #744259;
+}
+
+.footer-credits {
+    font-size: 0.9rem;
+    color: #a85c7d;
+    opacity: 0.8;
+}
+
 </style>
 </head>
 
@@ -343,10 +418,13 @@ body {
 
 <br>
 
-<div class="footer">
-    <p>Created by: Aeris Bandong, Antoinette De Jesus, Heart Imam, & Lynnie Tano | 9 SAPPHIRE</p>
-    <p>Sources: Bootstrap, Google Fonts, Pinterest Images</p>
-</div>
+<footer class="footer">
+    <p>Created by: <span class="pink-bg">Aeris Bandong, Antoinette De Jesus, Heart Imam, & Lynnie Tano</span></p>
+    <p class="footer-credits">Grade 9 SAPPHIRE | 2026</p>
+    <div class="mt-2">
+        <small>Sources: Bootstrap, Google Fonts, Pinterest Images</small>
+    </div>
+</footer>
 
 <script>
 let hour = new Date().getHours();
