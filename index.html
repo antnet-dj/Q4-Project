@@ -103,17 +103,27 @@ h1, p {
 }
 
 .typing {
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fffafc;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+
     overflow: hidden;
-    border-right: .15em solid white;
     white-space: nowrap;
-    margin: 0 auto;
-    animation: typing 2s steps(10, end), blink .7s infinite;
+    border-right: .15em solid white;
+
     width: 0;
+    margin: 0 auto;
+
+    animation:
+        typing 2.2s steps(6, end) forwards,
+        blink .7s infinite;
 }
 
 @keyframes typing {
     from { width: 0 }
-    to { width: 100% }
+    to { width: 6ch }
 }
 
 @keyframes blink {
