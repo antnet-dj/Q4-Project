@@ -14,7 +14,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #fff6fb;
+    color:#2f3e55;
 }
 
 body::before {
@@ -38,6 +38,7 @@ body::before {
 }
 
 .title {
+    color: white;
     display: inline-block;
     padding: 12px 26px;
     font-size: 28px;
@@ -198,6 +199,8 @@ body::before {
 .music { background: linear-gradient(135deg, #b3fff0, #ccfff4); }
 .loplt { background: linear-gradient(135deg, #e3e3e3, #c7c7c7); }
 .ve { background: linear-gradient(135deg, #b3d3ff, #ccfffc); }
+.filipino { background: linear-gradient(135deg, #ffc7b3, #fff3cc); }
+.homeroom { background: linear-gradient(135deg, #ffffff60, #ffffff9e); }
 
 .sub {
     font-size: 0.75rem;
@@ -305,6 +308,52 @@ body::before {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+.footer {
+    margin: 40px auto 20px;
+    padding: 25px;
+    max-width: 1100px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(255, 150, 200, 0.2);
+    transition: all 0.4s ease;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow:
+            0 0 10px rgba(251, 119, 198, 0.233),
+            0 0 20px rgba(255, 120, 201, 0.412);
+    }
+    50% {
+        box-shadow:
+            0 0 10px rgba(255, 120, 201, 0.333),
+            0 0 20px rgba(255, 120, 201, 0.385);
+    }
+}
+
+.footer:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 12px 40px rgba(255, 150, 200, 0.4);
+}
+
+.footer p {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #744259;
+}
+
+.footer-credits {
+    font-size: 0.9rem;
+    color: #a85c7d;
+    opacity: 0.8;
+}
+
 </style>
 </head>
 <body>
@@ -317,13 +366,19 @@ body::before {
 </div>
 
 <div class="sidebar">
-    <div class="sidebar-title">🌸 Virtual Notebooks</div>
+    <div class="sidebar-title">🌸 SAKURA HIGH SCHOOL - Virtual Notebooks</div>
 
     <a href="dashboard.html" class="side-link">📊 Dashboard</a>
     <a href="profile.html" class="side-link">👤 Profile</a>
     <a href="tasks.html" class="side-link">📝 Tasks</a>
-    <a href="#" class="side-link logout">🚪 Logout</a>
+    <a href="index.html" class="side-link logout" onclick="return confirmLogout()">💩 Logout</a>
 </div>
+
+<script>
+function confirmLogout() {
+    return confirm("Are you sure you want to log out? 😿");
+}
+</script>
 
 <div class="main-content">
 <div class="header">
@@ -495,7 +550,7 @@ body::before {
 
     <a href="#" class="notebook filipino">
         Filipino
-        <div class="sub">our native language</div>
+        <div class="sub">culture & stories</div>
 
         <br>
         <div class="progress-wrapper">
@@ -511,22 +566,32 @@ body::before {
 
     <a href="#" class="notebook homeroom">
         Homeroom
-        <div class="sub">announcements</div>
+        <div class="sub">reminders & announcements</div>
 
         <br>
         <div class="progress-wrapper">
     <div class="progress-info">
         <span>Progress:</span>
-        <span>75%</span>
+        <span>100%</span>
     </div>
     <div class="progress-track">
-        <div class="progress-line" style="width: 80%;"></div>
+        <div class="progress-line" style="width: 100%;"></div>
     </div>
 </div>
     </a>
 
 </div>
 </div>
+
+<br>
+
+<footer class="footer">
+    <p>Created by: <span class="pink-bg">Aeris Bandong, Antoinette De Jesus, Heart Imam, & Lynnie Tano</span></p>
+    <p class="footer-credits">Grade 9 SAPPHIRE | 2026</p>
+    <div class="mt-2">
+        <small>Sources: Bootstrap, Google Fonts, Pinterest Images</small>
+    </div>
+</footer>
 
 <script>
         window.addEventListener("load", function() {

@@ -206,6 +206,15 @@ details[open] .arrow {
     transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
 
+.sprite3 {
+    width: 220px; 
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
 .sprite:hover {
     transform: scale(1.1);
     filter: drop-shadow(0 0 15px hotpink);
@@ -248,7 +257,7 @@ function login() {
 
     if(user === "rainbowdash" && pass === "applejack") {
         alert("⭐Login Successful!");
-        window.location.href = "notebooks.html";
+        window.location.href = "dashboard.html";
     } else {
         attempts--;
 
@@ -272,6 +281,8 @@ function reveal() {
 <img src="https://www.pngall.com/wp-content/uploads/15/Emu-Otori-PNG-Free-Image.png" alt="Sprite" class="sprite" onclick="wondehoy()">
 
 <img src="https://www.pngall.com/wp-content/uploads/15/Emu-Otori-PNG-Picture.png" alt="Sprite2" class="sprite2" onclick="wondehoy()">
+
+<img src="https://www.pngall.com/wp-content/uploads/15/Pinkie-Pie-PNG-Image-HD.png" alt="Sprite3" class="sprite3" onclick="wondehoy()">
 
 <script>
 function wondehoy() {

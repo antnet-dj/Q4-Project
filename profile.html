@@ -48,10 +48,67 @@ body {
     margin: 50px auto;
     padding: 30px;
     border-radius: 20px;
-    background: rgba(255, 226, 241, 0.427);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     animation: glowPulse 3s ease-in-out infinite;
+    background: rgba(255, 205, 228, 0.453); 
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);  
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 
+    0 20px 40px rgba(255, 182, 213, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);   
+    animation: glowPulse 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow:
+            0 0 10px rgba(251, 119, 198, 0.233),
+            0 0 20px rgba(255, 120, 201, 0.412);
+    }
+    50% {
+        transform: translateY(-10px);
+        box-shadow:
+            0 0 10px rgba(255, 120, 201, 0.333),
+            0 0 20px rgba(255, 120, 201, 0.385);
+    }
+}
+
+.light-box-inner {
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 18px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 8px 20px rgba(255, 150, 200, 0.12);
+    transition: 0.3s ease;
+}
+
+.light-box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.1), 
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shimmer 8s infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
 }
 
 @keyframes glowPulse {
@@ -127,6 +184,20 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 32px rgba(255, 150, 200, 0.2);
     transition: all 0.4s ease;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow:
+            0 0 10px rgba(251, 119, 198, 0.233),
+            0 0 20px rgba(255, 120, 201, 0.412);
+    }
+    50% {
+        box-shadow:
+            0 0 10px rgba(255, 120, 201, 0.333),
+            0 0 20px rgba(255, 120, 201, 0.385);
+    }
 }
 
 .footer:hover {
@@ -145,6 +216,17 @@ h1 {
     font-size: 0.9rem;
     color: #a85c7d;
     opacity: 0.8;
+}
+
+.pink-bg {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff9abd, #ffd1e3, #ffd1ed);
+    color: #2f3e55;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(255, 150, 210, 0.5);
 }
 
 .form-control {
@@ -224,6 +306,18 @@ label {
     to { transform: rotate(360deg); }
 }
 
+.pink-bg {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff9abd, #ffd1e3, #ffd1ed);
+    color: #2f3e55;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(255, 150, 210, 0.5);
+    margin-bottom: 10px;
+}
+
 </style>
 </head>
 <body>
@@ -236,15 +330,21 @@ label {
 
 <nav class="navbar navbar-expand-lg">
 <div class="container">
-<a class="navbar-brand" href="#">🌸 Student Portal</a>
+<a class="navbar-brand" href="#">🌸 SAKURA HIGH SCHOOL - Student Portal</a>
 <div>
-<a class="nav-link d-inline" href="dashboard.html">Dashboard</a>
-<a class="nav-link d-inline" href="notebooks.html">Virtual Notebook</a>
-<a class="nav-link d-inline" href="tasks.html">Tasks</a>
-<a class="nav-link d-inline" href="index.html">Logout</a>
+<a class="nav-link d-inline" href="dashboard.html">📊 Dashboard</a>
+<a class="nav-link d-inline" href="notebooks.html">📒 Virtual Notebook</a>
+<a class="nav-link d-inline" href="tasks.html">📝 Tasks</a>
+<a class="nav-link d-inline" href="index.html" onclick="return confirmLogout()">💩 Logout</a>
 </div>
 </div>
 </nav>
+
+<script>
+function confirmLogout() {
+    return confirm("Are you sure you want to log out? 😿");
+}
+</script>
 
 <div class="profile-box">
     <h1 class="gradient">👤 My Profile</h1>
@@ -278,7 +378,7 @@ label {
 
 <br>
 
-    <footer class="footer">
+<footer class="footer">
     <p>Created by: <span class="pink-bg">Aeris Bandong, Antoinette De Jesus, Heart Imam, & Lynnie Tano</span></p>
     <p class="footer-credits">Grade 9 SAPPHIRE | 2026</p>
     <div class="mt-2">
