@@ -48,10 +48,67 @@ body {
     margin: 50px auto;
     padding: 30px;
     border-radius: 20px;
-    background: rgba(255, 226, 241, 0.427);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     animation: glowPulse 3s ease-in-out infinite;
+    background: rgba(255, 205, 228, 0.453); 
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);  
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 
+    0 20px 40px rgba(255, 182, 213, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);   
+    animation: glowPulse 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow:
+            0 0 10px rgba(251, 119, 198, 0.233),
+            0 0 20px rgba(255, 120, 201, 0.412);
+    }
+    50% {
+        transform: translateY(-10px);
+        box-shadow:
+            0 0 10px rgba(255, 120, 201, 0.333),
+            0 0 20px rgba(255, 120, 201, 0.385);
+    }
+}
+
+.light-box-inner {
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 18px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 8px 20px rgba(255, 150, 200, 0.12);
+    transition: 0.3s ease;
+}
+
+.light-box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.1), 
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shimmer 8s infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
 }
 
 @keyframes glowPulse {
