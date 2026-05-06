@@ -134,41 +134,59 @@ body::before {
 }
 
 .light-box {
-    margin: 20px auto;
-    padding: 25px;
-    max-width: 1100px;
-    background: rgba(255, 206, 231, 0.427);
-    border-radius: 25px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    margin: 30px auto;
+    padding: 40px;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);  
+    border-radius: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
     box-shadow: 
-        0 10px 30px rgba(255, 150, 200, 0.15),
-        0 0 0 1px rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    0 20px 40px rgba(255, 182, 213, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);   
     animation: glowPulse 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
 }
 
 @keyframes glowPulse {
-    0% {
+    0%, 100% {
+        transform: translateY(0);
         box-shadow:
             0 0 10px rgba(251, 119, 198, 0.233),
             0 0 20px rgba(255, 120, 201, 0.412);
     }
-
     50% {
-        box-shadow:
-            0 0 18px rgba(255, 150, 209, 0.261),
-            0 0 35px rgba(255, 150, 209, 0.413);
-    }
-
-    100% {
+        transform: translateY(-10px);
         box-shadow:
             0 0 10px rgba(255, 120, 201, 0.333),
             0 0 20px rgba(255, 120, 201, 0.385);
     }
 }
 
+.light-box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.1), 
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shimmer 8s infinite;
+    pointer-events: none;
+}
 
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
 
 .math { background: linear-gradient(135deg, #b3b4ff, #d6eaff); }
 .english { background: linear-gradient(135deg, #ffb9b9, #ffe1f5); }
