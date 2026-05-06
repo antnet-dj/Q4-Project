@@ -240,6 +240,8 @@ details[open] .arrow {
 </div>
 
 <script>
+let attempts = 3; 
+
 function login() {
     let user = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
@@ -248,7 +250,17 @@ function login() {
         alert("⭐Login Successful!");
         window.location.href = "notebooks.html";
     } else {
-        alert("❌Wrong username or password!");
+        attempts--;
+
+        if(attempts > 0) {
+            alert("❌Wrong username or password! ☹️ \nAttempts left: " + attempts);
+        } else {
+            alert("Too many failed attempts! 😿 Login disabled. 💩");
+
+            document.getElementById("username").disabled = true;
+            document.getElementById("password").disabled = true;
+            document.querySelector(".btn-primary").disabled = true;
+        }
     }
 }
 
