@@ -267,10 +267,16 @@ label {
 <a class="nav-link d-inline" href="dashboard.html">Dashboard</a>
 <a class="nav-link d-inline" href="notebooks.html">Virtual Notebook</a>
 <a class="nav-link d-inline" href="tasks.html">Tasks</a>
-<a class="nav-link d-inline" href="index.html">Logout</a>
+<a class="nav-link d-inline" href="index.html" onclick="return confirmLogout()">Logout</a>
 </div>
 </div>
 </nav>
+
+<script>
+function confirmLogout() {
+    return confirm("Are you sure you want to log out? 😿");
+}
+</script>
 
 <div class="profile-box">
     <h1 class="gradient">👤 My Profile</h1>
