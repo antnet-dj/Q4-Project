@@ -441,8 +441,21 @@ body {
         </li>
 
             <script>
-            function confirmLogout() {
-            return confirm("Are you sure you want to log out? 😿");
+                function confirmLogout() {
+
+                let confirmAction = confirm("Are you sure you want to log out? 😿");
+
+                if(confirmAction) {
+                    localStorage.removeItem("studentName");
+                    localStorage.removeItem("studentGrade");
+                    localStorage.removeItem("favoriteSubject");
+                    localStorage.removeItem("studentStatus");
+                    localStorage.removeItem("profilePic");
+                    localStorage.removeItem("tasks");
+                    return true;
+                }
+
+                return false;
             }
             </script>
 
