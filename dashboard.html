@@ -61,6 +61,26 @@ body {
     box-shadow: 0 0 8px rgba(255, 141, 177, 0.5);
 }
 
+.nav-pfp {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 182, 213, 0.8);
+    box-shadow:
+        0 0 8px rgba(255, 150, 200, 0.4),
+        0 0 18px rgba(255, 120, 180, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-pfp:hover {
+    transform: scale(1.1);
+    box-shadow:
+        0 0 12px rgba(255, 150, 200, 0.6),
+        0 0 25px rgba(255, 120, 180, 0.3);
+}
+
 .hero {
     text-align: center;
     padding: 50px 20px 20px;
@@ -414,6 +434,11 @@ body {
         <li class="nav-item">
         <a class="nav-link" href="index.html" onclick="return confirmLogout()">💩 Logout</a>
         </li>
+        <li class="nav-item ms-3">
+            <img id="navProfilePic"
+                 src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"
+                 class="nav-pfp">
+        </li>
 
             <script>
             function confirmLogout() {
@@ -581,6 +606,14 @@ function updateTasksLeft() {
 updateTasksLeft();
 
 window.addEventListener("storage", updateTasksLeft);
+
+window.addEventListener("load", function () {
+    let savedPic = localStorage.getItem("profilePic");
+
+    if (savedPic) {
+        document.getElementById("navProfilePic").src = savedPic;
+    }
+});
 </script>
 
 </body>

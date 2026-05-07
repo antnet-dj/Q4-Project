@@ -281,6 +281,25 @@ kbd {
                 0 0 25px rgba(255, 180, 220, 0.3);
 }
 
+.nav-pfp {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 182, 213, 0.8);
+    box-shadow:
+        0 0 8px rgba(255, 150, 200, 0.4),
+        0 0 18px rgba(255, 120, 180, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-pfp:hover {
+    transform: scale(1.1);
+    box-shadow:
+        0 0 12px rgba(255, 150, 200, 0.6),
+        0 0 25px rgba(255, 120, 180, 0.3);
+}
 </style>
 </head>
 
@@ -297,12 +316,20 @@ kbd {
     <a class="navbar-brand logo-badge" href="#">
         🌸 SAKURA HIGH SCHOOL • Student Portal
     </a>
-<div>
-<a class="nav-link d-inline" href="dashboard.html">📊 Dashboard</a>
-<a class="nav-link d-inline" href="notebooks.html">📒 Virtual Notebook</a>
-<a class="nav-link d-inline" href="profile.html">👤 Profile</a>
-<a class="nav-link d-inline" href="index.html" onclick="return confirmLogout()">💩 Logout</a>
-</div>
+    <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">📊 Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="notebooks.html">📒 Virtual Notebook</a></li>
+          <li class="nav-item"><a class="nav-link" href="tasks.html">📝 Tasks</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html">👤 Profile</a></li>
+          <li class="nav-item">
+          <a class="nav-link" href="index.html" onclick="return confirmLogout()">💩 Logout</a>
+          </li>
+          <li class="nav-item ms-3">
+              <img id="navProfilePic"
+                   src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"
+                   class="nav-pfp">
+          </li>
 </div>
 </nav>
 
@@ -406,6 +433,29 @@ function renderTask(task) {
 
 function updateCount() {
     document.getElementById("taskCount").innerText = tasks.length;
+}
+
+function uploadPhoto() {
+    let input = document.getElementById("photoInput");
+    let preview = document.getElementById("preview");
+
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+
+        reader.onload = function(e) {
+            let imgData = e.target.result;
+
+            // update preview
+            preview.src = imgData;
+
+            // SAVE to localStorage
+            localStorage.setItem("profilePic", imgData);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+
+        alert("🌸 Profile picture updated!");
+    }
 }
 </script>
 
