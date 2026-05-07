@@ -265,14 +265,14 @@ function login() {
     let user = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
 
-    if(user === "rainbowdash" && pass === "applejack") {
-        alert("⭐Login Successful!");
+    if(user.trim() !== "" && pass === "applejack") {
+        alert("⭐ Login Successful! Welcome " + user + "!");
         window.location.href = "dashboard.html";
     } else {
         attempts--;
 
         if(attempts > 0) {
-            alert("❌Wrong username or password! ☹️ \nAttempts left: " + attempts);
+            alert("❌ Wrong password! ☹️ \nAttempts left: " + attempts);
         } else {
             alert("Too many failed attempts! 😿 Login disabled. 💩");
 
@@ -298,7 +298,7 @@ function wondehoy() {
 
 function showInstructions() {
         document.getElementById("instructions").innerHTML = 
-                "Enter the correct username and password.";
+                "Choose a username and enter the correct password.";
         }
 
 </script>
