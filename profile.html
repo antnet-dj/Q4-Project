@@ -581,6 +581,15 @@ function uploadPhoto() {
         alert("🌸 Profile picture updated!");
     }
 }
+
+window.addEventListener("load", function () {
+    let savedPic = localStorage.getItem("profilePic");
+
+    if (savedPic) {
+        document.getElementById("navProfilePic").src = savedPic;
+    }
+});
+
 </script>
 
 </body>
