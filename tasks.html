@@ -370,6 +370,43 @@ window.addEventListener("load", function() {
             }, 500);
         }, 2000);
     });
+
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+window.onload = function () {
+    tasks.forEach(task => renderTask(task));
+    updateCount();
+};
+
+function addTask() {
+    let taskInput = document.getElementById("taskInput");
+    let task = taskInput.value.trim();
+
+    if (task === "") {
+        alert("❗Please enter a task first!");
+        return;
+    }
+
+    tasks.push(task);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    renderTask(task);
+    updateCount();
+
+    taskInput.value = "";
+}
+
+function renderTask(task) {
+    let taskDiv = document.createElement("div");
+    taskDiv.className = "task-item";
+    taskDiv.innerHTML = "🌸 " + task;
+
+    document.getElementById("taskList").appendChild(taskDiv);
+}
+
+function updateCount() {
+    document.getElementById("taskCount").innerText = tasks.length;
+}
 </script>
 
 </body>

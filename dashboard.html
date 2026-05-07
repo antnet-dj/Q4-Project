@@ -451,12 +451,8 @@ body {
             <div class="card card2 p-4 text-center">
                 <div class="light-box-inner">
                 <h3 class="pink-bg">📚 Study Progress</h3>
-                <p>Tasks Completed: <span id="tasksDone"></span></p>
+                <p>Tasks Left: <span id="tasksLeft"></span></p>
                 <p>Subjects: 12</p>
-                <script>
-                    let completed = 12;
-                    document.getElementById("tasksDone").innerHTML = completed;
-                </script>
                 </div>
             </div>
         </div>
@@ -576,6 +572,15 @@ if(status) {
 } else {
     document.getElementById("studentStatus").innerText = "Not set";
 }
+
+function updateTasksLeft() {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    document.getElementById("tasksLeft").innerText = tasks.length;
+}
+
+updateTasksLeft();
+
+window.addEventListener("storage", updateTasksLeft);
 </script>
 
 </body>
