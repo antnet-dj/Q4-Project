@@ -262,6 +262,25 @@ kbd {
     margin-bottom: 10px;
 }
 
+.logo-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff9abd, #ffd1e3, #ffd1ed);
+    color: #744259 !important;
+    padding: 8px 16px;
+    border-radius: 999px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 150, 210, 0.4);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.logo-badge:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 150, 200, 0.5),
+                0 0 25px rgba(255, 180, 220, 0.3);
+}
+
 </style>
 </head>
 
@@ -275,7 +294,9 @@ kbd {
 
 <nav class="navbar navbar-expand-lg">
 <div class="container">
-<a class="navbar-brand" href="#">🌸 SAKURA HIGH SCHOOL - Student Portal</a>
+    <a class="navbar-brand logo-badge" href="#">
+        🌸 SAKURA HIGH SCHOOL • Student Portal
+    </a>
 <div>
 <a class="nav-link d-inline" href="dashboard.html">📊 Dashboard</a>
 <a class="nav-link d-inline" href="notebooks.html">📒 Virtual Notebook</a>
