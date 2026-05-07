@@ -371,6 +371,9 @@ function confirmLogout() {
         <option>TLE</option>
     </select>
 
+    <label>Status:</label>
+    <input type="text" id="status" class="form-control mb-3" placeholder="Enter your status (e.g. Ready to learn ✨)">
+
     <button class="btn btn-primary w-100 mt-3" onclick="saveProfile()">
         Save Profile 🌸
     </button>
@@ -391,10 +394,17 @@ function saveProfile() {
     let studentName = document.getElementById("name").value;
     let studentGrade = document.getElementById("grade").value;
     let favoriteSubject = document.getElementById("subject").value;
+    let status = document.getElementById("status").value;
 
-    if(studentName === "" || studentGrade === "" || favoriteSubject === "") {
+    if(studentName === "" || studentGrade === "" || favoriteSubject === "" || status === "") {
         alert("❗Please complete your profile first!");
     } else {
+
+        localStorage.setItem("studentName", studentName);
+        localStorage.setItem("studentGrade", studentGrade);
+        localStorage.setItem("favoriteSubject", favoriteSubject);
+        localStorage.setItem("studentStatus", status);
+
         alert(
             "🌸 Profile Saved! 🌸\n\n" +
             "Name: " + studentName +
@@ -415,6 +425,7 @@ function saveProfile() {
             }, 500);
         }, 2000);
     });
+
 </script>
 
 </body>

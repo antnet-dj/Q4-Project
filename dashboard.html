@@ -418,9 +418,10 @@ body {
             <div class="card card1 p-4 text-center">
                 <div class="light-box-inner">
                 <h3 class="pink-bg">👩‍🎓 Student Profile</h3>
-                <p><span class="bold">Name:</span> Your Name</p>
-                <p><span class="bold">Grade & Section:</span> Grade 9 - Sapphire</p>
-                <p><span class="bold">Status:</span> Ready to Learn ✨</p>
+                <p><span class="bold">Name:</span> <span id="studentName"></span></p>
+                <p><span class="bold">Grade & Section:</span> <span id="studentGrade"></span></p>
+                <p><span class="bold">Favorite Subject:</span> <span id="studentSubject"></span></p>
+                <p><span class="bold">Status:</span> <span id="studentStatus"></span></p>
                 </div>
             </div>
         </div>
@@ -430,7 +431,7 @@ body {
                 <div class="light-box-inner">
                 <h3 class="pink-bg">📚 Study Progress</h3>
                 <p>Tasks Completed: <span id="tasksDone"></span></p>
-                <p>Subjects: 10</p>
+                <p>Subjects: 12</p>
                 <script>
                     let completed = 12;
                     document.getElementById("tasksDone").innerHTML = completed;
@@ -525,6 +526,35 @@ window.addEventListener("load", function() {
             }, 500);
         }, 2000);
     });
+
+let name = localStorage.getItem("studentName");
+let grade = localStorage.getItem("studentGrade");
+let subject = localStorage.getItem("favoriteSubject");
+let status = localStorage.getItem("studentStatus");
+
+if(name) {
+    document.getElementById("studentName").innerText = name;
+} else {
+    document.getElementById("studentName").innerText = "Guest";
+}
+
+if(grade) {
+    document.getElementById("studentGrade").innerText = grade;
+} else {
+    document.getElementById("studentGrade").innerText = "Not set";
+}
+
+if(subject) {
+    document.getElementById("studentSubject").innerText = subject;
+} else {
+    document.getElementById("studentSubject").innerText = "Not set";
+}
+
+if(status) {
+    document.getElementById("studentStatus").innerText = status;
+} else {
+    document.getElementById("studentStatus").innerText = "Not set";
+}
 </script>
 
 </body>
