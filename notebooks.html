@@ -388,7 +388,7 @@ function confirmLogout() {
 <div class="light-box">
 <div class="grid">
 
-    <a href="#" class="notebook math">
+    <a href="#" class="notebook math" onclick="notAvailable(); return false;">
         Math
         <div class="sub">logic & numbers</div>
 
@@ -404,7 +404,7 @@ function confirmLogout() {
 </div>
     </a>
 
-    <a href="#" class="notebook english">
+    <a href="#" class="notebook english" onclick="notAvailable(); return false;">
         English
         <div class="sub">words & stories</div>
         
@@ -420,7 +420,7 @@ function confirmLogout() {
 </div>
     </a>
 
-    <a href="#" class="notebook ss">
+    <a href="#" class="notebook ss" onclick="notAvailable(); return false;">
         Social Studies
         <div class="sub">history & society</div>
 
@@ -436,7 +436,7 @@ function confirmLogout() {
 </div>
     </a>
 
-    <a href="#" class="notebook science">
+    <a href="#" class="notebook science" onclick="notAvailable(); return false;">
         Science
         <div class="sub">discovery & experiments</div>
 
@@ -452,7 +452,7 @@ function confirmLogout() {
 </div>  
     </a>
 
-    <a href="#" class="notebook tle">
+    <a href="#" class="notebook tle" onclick="notAvailable(); return false;">
         TLE
         <div class="sub">skills & practice</div>
         
@@ -468,7 +468,7 @@ function confirmLogout() {
 </div>
     </a>
 
-    <a href="#" class="notebook peh">
+    <a href="#" class="notebook peh" onclick="notAvailable(); return false;">
         PEH
         <div class="sub">health & movement</div>
 
@@ -484,7 +484,7 @@ function confirmLogout() {
 </div>
     </a>
 
-    <a href="#" class="notebook ict">
+    <a href="#" class="notebook ict" onclick="notAvailable(); return false;">
         ICT
         <div class="sub">tech & coding</div>
         
@@ -500,7 +500,7 @@ function confirmLogout() {
 </div>
     </a>
 
-    <a href="#" class="notebook music">
+    <a href="#" class="notebook music" onclick="notAvailable(); return false;">
         Music & Arts
         <div class="sub">creativity & expression</div>
 
@@ -516,7 +516,7 @@ function confirmLogout() {
 </div>  
     </a>
 
-    <a href="#" class="notebook loplt">
+    <a href="#" class="notebook loplt" onclick="notAvailable(); return false;">
         LOP/LT 
         <div class="sub">discipline & leadership</div>
 
@@ -532,7 +532,7 @@ function confirmLogout() {
 </div>
     </a>
 
-    <a href="#" class="notebook ve">
+    <a href="#" class="notebook ve" onclick="notAvailable(); return false;">
         VE
         <div class="sub">philosophy & values</div>
 
@@ -548,7 +548,7 @@ function confirmLogout() {
 </div>
     </a>
 
-    <a href="#" class="notebook filipino">
+    <a href="#" class="notebook filipino" onclick="notAvailable(); return false;">
         Filipino
         <div class="sub">culture & stories</div>
 
@@ -564,7 +564,7 @@ function confirmLogout() {
 </div>
     </a>
 
-    <a href="#" class="notebook homeroom">
+    <a href="#" class="notebook homeroom" onclick="notAvailable(); return false;">
         Homeroom
         <div class="sub">reminders & announcements</div>
 
@@ -605,6 +605,10 @@ function confirmLogout() {
             }, 500);
         }, 2000);
     });
+
+    function notAvailable() {
+    alert("⏰ Not available at this hour.");
+    }
 </script>
 </body>
 </html>

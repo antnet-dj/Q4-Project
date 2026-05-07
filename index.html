@@ -265,13 +265,18 @@ function login() {
     let user = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
 
-    if(user.trim() !== "" && pass === "applejack") {
+    if (user.trim() === "" || pass.trim() === "") {
+        alert("❗Please enter both username and password!");
+        return;
+    }
+
+    if (user.trim() !== "" && pass === "applejack") {
         alert("⭐ Login Successful! Welcome " + user + "!");
         window.location.href = "dashboard.html";
     } else {
         attempts--;
 
-        if(attempts > 0) {
+        if (attempts > 0) {
             alert("❌ Wrong password! ☹️ \nAttempts left: " + attempts);
         } else {
             alert("Too many failed attempts! 😿 Login disabled. 💩");
