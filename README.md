@@ -1,2 +1,1 @@
-USERNAME: rainbowdash
 PASSWORD: applejack
